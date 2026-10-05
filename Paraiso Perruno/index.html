@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Guardería, hotel y campamento canino en La Calera, Cundinamarca. 10.000 m² de diversión para tu perro.">
+    <title>Guardería Paraíso Perruno - Campamento Canino en La Calera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="header-principal">
+        <div class="contenedor nav-contenedor">
+            <div class="logo">
+                <a href="#inicio" class="logo-link">
+                    <img src="imagenes/logotipo.jpg" alt="Logotipo Paraíso Perruno" class="logo-img">
+                    <span class="texto-logo">Paraíso Perruno</span>
+                </a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación"></button>
+
+            <nav class="navegacion" id="navegacion">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#contacto">Contáctenos</a>
+                
+                <a href="#" class="btn-carrito-nav" id="btn-carrito-nav" aria-label="Ver carrito de compras">
+                    🛒 Carrito (<span id="contador-carrito">0</span>)
+                </a>
+                
+                <a href="https://wa.me/573118583684" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">¡Reserva por WhatsApp!</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PANEL CARRITO -->
+    <div id="carrito-panel" class="carrito-panel">
+        <div class="carrito-panel-header">
+            <h3>🛒 Tus Servicios</h3>
+            <button id="cerrar-panel" class="btn-cerrar-panel" aria-label="Cerrar carrito">&times;</button>
+        </div>
+        
+        <div id="carrito-items" class="carrito-items-contenedor">
+            <p class="carrito-vacio-msg">El carrito está vacío.</p>
+        </div>
+        
+        <div class="carrito-resumen">
+            <div class="carrito-total">
+                <strong>Total:</strong> $<span id="carrito-total">0</span>
+            </div>
+            <button id="vaciar-carrito" class="btn-vaciar">Vaciar</button>
+        </div>
+        
+        <button id="btn-whatsapp-carrito" class="btn-whatsapp-carrito" disabled>
+            📱 Cotizar servicios por WhatsApp
+        </button>
+    </div>
+
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section id="inicio" class="hero">
+            <div class="hero-contenido">
+                <span class="badge-temporada">🌲 10.000 Metros de Diversión en La Calera</span>
+                <h2>El paraíso terrenal donde tu perro vive una aventura inolvidable</h2>
+                <p>¡Bienvenido a <strong>Paraíso Perruno en La Calera, Cundinamarca</strong>! 🐾 Ideal para que tu peludo disfrute de una estadía única con guardería, hotel, piscina, caminatas y rutas de recreación.</p>
+                
+                <div class="hero-promos">
+                    <p>🔥 Comunidad activa: Más de <strong>11.000 seguidores</strong> confían en nuestro cuidado profesional.</p>
+                    <p>Ubicación privilegiada en el corazón de La Calera.</p>
+                </div>
+
+                <div class="hero-botones">
+                    <a href="#servicios" class="btn-principal">Ver Servicios</a>
+                    <a href="https://wa.me/573118583684" target="_blank" rel="noopener noreferrer" class="btn-secundario">Escribir al WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-imagen">
+                <img src="imagenes/hero-perros.jpg" alt="Perros felices jugando en el campamento canino" loading="lazy">
+            </div>
+        </section>
+
+        <!-- VIDEO -->
+        <section class="seccion seccion-video">
+            <div class="contenedor">
+                <header class="titulo-seccion text-center">
+                    <p class="etiqueta">Aventura en Vivo</p>
+                    <h2>Así se vive la experiencia</h2>
+                    <p>Mira un abrebocas de la diversión diaria de nuestros campistas perrunos.</p>
+                </header>
+                <div class="contenedor-video">
+                    <video autoplay muted loop playsinline controls class="video-automatico" loading="lazy">
+                        <source src="imagenes/ruta.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA DE FOTOS -->
+        <section class="seccion fondo-suave">
+            <div class="contenedor">
+                <header class="titulo-seccion text-center">
+                    <p class="etiqueta">Momentos Inolvidables</p>
+                    <h2>Galería de Nuestros Campistas</h2>
+                </header>
+
+                <div class="grid-galeria">
+                    <div class="item-galeria"><img src="imagenes/galeria-1.jpg" alt="Perros corriendo en el campo" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/galeria-2.jpg" alt="Piscina canina y diversión" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/galeria-3.jpg" alt="Descanso en el hotel campestre" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/galeria-4.jpg" alt="Perritos socializando al aire libre" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/galeria-6.jpg" alt="Entrenamiento y agilidad canina" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/galeria-7.jpg" alt="Cuidador consintiendo a un perro" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/galeria-8.jpg" alt="Perritos descansando felices" loading="lazy"></div>
+                    <div class="item-galeria"><img src="imagenes/golden.jpg" alt="Golden retriever feliz" loading="lazy"></div>
+                </div>
+            </div>
+
+            <!-- MODO GALERÍA -->
+            <div id="modal-galeria" class="modal-galeria" role="dialog" aria-modal="true">
+                <span class="modal-cerrar" aria-label="Cerrar imagen ampliada">&times;</span>
+                <img class="modal-contenido" id="img-modal" alt="Foto ampliada de Paraíso Perruno">
+            </div>
+        </section>
+
+        <!-- SOBRE NOSOTROS -->
+        <section id="nosotros" class="seccion fondo-suave">
+            <div class="contenedor">
+                <header class="titulo-seccion text-center">
+                    <p class="etiqueta">Nuestra Identidad</p>
+                    <h2>Colegio, Hotel Canino y Recreación</h2>
+                </header>
+                <div class="nosotros-grid">
+                    <div class="nosotros-texto">
+                        <p>En <strong>Paraíso Perruno</strong> garantizamos una experiencia inolvidable para tu hijo perruno. Contamos con un espacio campestre masivo diseñado para que corran, socialicen y aprendan con entrenadores calificados.</p>
+                        <blockquote class="cita-destacada">
+                            <p>"Aquí todo es aventura, libertad y un entorno 100% natural enfocado en el bienestar y felicidad de cada mascota."</p>
+                            <footer>— Equipo Paraíso Perruno</footer>
+                        </blockquote>
+                    </div>
+                    <div class="nosotros-iconos">
+                        <div class="item-icono"><span></span> <strong>10.000 m²</strong></div>
+                        <div class="item-icono"><span>‍♂️</span> <strong>Piscina Canina</strong></div>
+                        <div class="item-icono"><span></span> <strong>Rutas Seguras</strong></div>
+                        <div class="item-icono"><span>🎓</span> <strong>Entrenamiento</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="seccion">
+            <div class="contenedor">
+                <header class="titulo-seccion text-center">
+                    <p class="etiqueta">Nuestros Pilares</p>
+                    <h2>NUESTROS SERVICIOS</h2>
+                </header>
+
+                <div class="grid-servicios">
+                    <article class="tarjeta-servicio">
+                        <figure>
+                            <img src="imagenes/hotel.jpg" alt="Hotel campestre para perros" loading="lazy">
+                            <figcaption>🏨 Hotel Canino</figcaption>
+                        </figure>
+                        <div class="contenido-tarjeta">
+                            <h3>Estadía y Hotel</h3>
+                            <p>Alojamiento cómodo en medio de la naturaleza con vigilancia constante.</p>
+                            <p class="precio">$50.000</p>
+                            <button class="btn-principal btn-agregar" data-id="1" data-nombre="Estadía y Hotel" data-precio="50000">Agregar al Carrito</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-servicio">
+                        <figure>
+                            <img src="imagenes/piscina.jpg" alt="Piscina para perros" loading="lazy">
+                            <figcaption>🏊‍♂️ Zona Húmeda</figcaption>
+                        </figure>
+                        <div class="contenido-tarjeta">
+                            <h3>Piscina y Hidroterapia</h3>
+                            <p>Diversión acuática supervisada para refrescarse y quemar energía.</p>
+                            <p class="precio">$30.000</p>
+                            <button class="btn-principal btn-agregar" data-id="2" data-nombre="Piscina y Hidroterapia" data-precio="30000">Agregar al Carrito</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-servicio">
+                        <figure>
+                            <img src="imagenes/ruta.jpeg" alt="Ruta de recreación canina" loading="lazy">
+                            <figcaption>🚐 Transporte Especializado</figcaption>
+                        </figure>
+                        <div class="contenido-tarjeta">
+                            <h3>Ruta de Recreación</h3>
+                            <p>Servicio de transporte puerta a puerta para llevar a tu peludo al campamento.</p>
+                            <p class="precio">$25.000</p>
+                            <button class="btn-principal btn-agregar" data-id="3" data-nombre="Ruta de Recreación" data-precio="25000">Agregar al Carrito</button>
+                        </div>
+                    </article>
+
+                    <article class="tarjeta-servicio">
+                        <figure>
+                            <img src="imagenes/ecologica.jpg" alt="Perros explorando en el bosque" loading="lazy">
+                            <figcaption>🌲 Salidas Ecológicas</figcaption>
+                        </figure>
+                        <div class="contenido-tarjeta">
+                            <h3>Caminatas de Aventura</h3>
+                            <p>Excursiones guiadas por senderos del bosque para explorar y nadar.</p>
+                            <p class="precio">$40.000</p>
+                            <button class="btn-principal btn-agregar" data-id="4" data-nombre="Caminatas de Aventura" data-precio="40000">Agregar al Carrito</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section id="contacto" class="seccion fondo-suave">
+            <div class="contenedor form-contenedor">
+                <header class="titulo-seccion text-center">
+                    <p class="etiqueta">Contáctanos Directamente</p>
+                    <h2>Formulario de Reserva y Cotización</h2>
+                </header>
+
+                <form class="formulario-avanzado" id="formulario-reserva">
+                    <fieldset>
+                        <legend>👤 Información del Propietario</legend>
+                        <div class="grupo-campo">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" placeholder="Ej: Andrea Gómez" required>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="correo">Correo Electrónico *</label>
+                            <input type="email" id="correo" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="telefono">Teléfono / Celular *</label>
+                            <input type="tel" id="telefono" placeholder="311 8583684" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>🐶 Información de tu Mascota</legend>
+                        <div class="grupo-campo">
+                            <label for="nombre-mascota">Nombre de la Mascota *</label>
+                            <input type="text" id="nombre-mascota" placeholder="Ej: Bruno" required>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="tipo-mascota">Especie / Raza *</label>
+                            <input type="text" id="tipo-mascota" placeholder="Ej: Perro / Husky" required>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="edad-mascota">Edad aproximada</label>
+                            <input type="text" id="edad-mascota" placeholder="Ej: 1 año y medio">
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="ubicacion-recogida">Dirección o Sector de Recogida *</label>
+                            <input type="text" id="ubicacion-recogida" placeholder="Ej: Calle 116 con 15, Bogotá" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>🎯 Servicio de Interés</legend>
+                        <div class="grupo-campo">
+                            <label for="servicio-interes">Seleccione el servicio: *</label>
+                            <select id="servicio-interes" required>
+                                <option value="">-- Elija una opción --</option>
+                                <option value="Hotel Canino">Hotel Canino</option>
+                                <option value="Guardería Campestre">Guardería Campestre</option>
+                                <option value="Piscina">Piscina</option>
+                                <option value="Salidas Ecológicas">Salidas Ecológicas / Caminatas</option>
+                            </select>
+                        </div>
+                        <div class="grupo-campo">
+                            <label for="nivel-energia">Nivel de energía (1 a 10): <span id="valor-energia">8</span></label>
+                            <input type="range" id="nivel-energia" min="1" max="10" value="8">
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="full-width">
+                        <legend>💬 Mensaje Adicional</legend>
+                        <div class="grupo-campo">
+                            <label for="mensaje">Cuéntanos sobre tu peludo o dudas específicas:</label>
+                            <textarea id="mensaje" rows="4" placeholder="Escribe aquí..."></textarea>
+                        </div>
+                        <div class="checkbox-grupo">
+                            <input type="checkbox" id="terminos" required>
+                            <label for="terminos">Acepto el tratamiento de datos para coordinar la reserva.</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-acciones">
+                        <button type="submit" class="btn-principal">Enviar por WhatsApp</button>
+                        <button type="reset" class="btn-limpiar" id="btn-limpiar">Limpiar Todo</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <div class="contenedor footer-grid">
+            <div>
+                <h3>🐾 Paraíso Perruno</h3>
+                <p>Campamento, hotel y colegio canino en La Calera, Cundinamarca.</p>
+            </div>
+            <div>
+                <h4>Redes Sociales Oficiales</h4>
+                <p><a href="https://www.facebook.com/paraisoperrunoguaderia" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+                <p><a href="https://www.instagram.com/campamentoparaisoperruno/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+            </div>
+            <div>
+                <h4>Contáctenos</h4>
+                <p> La Calera, Cundinamarca</p>
+                <p>📞 311 8583684</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Guardería Paraíso Perruno. Elaborado por Angel Alveiro Rivera.(Desarrollo Web II)</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
